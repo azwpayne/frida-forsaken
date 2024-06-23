@@ -1,0 +1,56 @@
+# Frida-Forsaken
+
+> Frida Forsaken is a Frida agent written in TypeScript, designed to modularize commonly used functions in daily work
+
+## Usage
+
+### compile & load
+
+```bash
+git clone xxx
+cd frida-forsaken
+yarn install
+```
+
+### Inject
+
+```bash
+# spwn
+frida -U -l src_agent.js -f package_name --pause
+
+# attach
+frida -UF -l src_agent.js --pause
+```
+
+### Development workflow
+
+To continuously recompile on change, keep this running in a terminal:
+
+```bash
+npm run watch
+```
+
+And use an editor like Visual Studio Code for code completion and instant
+type-checking feedback.
+
+## Reference&Thanks
+
+comprehensive
+
+- [frida-agent-example](https://github.com/oleavr/frida-agent-example)
+- [hooker](https://github.com/CreditTone/hooker)
+
+capture
+
+- [universal-android-ssl-pinning-bypass-with-frida](https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/)
+- [r0capture](https://github.com/r0ysue/r0capture)
+- [DroidSSLUnpinning](https://github.com/WooyunDota/DroidSSLUnpinning)
+- [frida-multiple-unpinning](https://codeshare.frida.re/@akabe1/frida-multiple-unpinning/)
+
+bypass_anti
+
+- [fridantiroot](https://codeshare.frida.re/@dzonerzy/fridantiroot/)
+
+art
+
+- [frida_hook_libart](https://github.com/lasting-yang/frida_hook_libart)

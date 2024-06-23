@@ -1,0 +1,22 @@
+{
+  "name": "frida-forsaken",
+  "version": "1.0.0",
+  "description": "Frida’s commonly used script integration(Writing based on typescript)",
+  "main": "src/main.ts",
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": "^16"
+  },
+  "scripts": {
+    "prepare": "npm run build",
+    "clean-log": "find log -type f ! -name .keep -delete",
+    "build": "frida-compile src/main.ts -o src_agent.js -c",
+    "watch": "frida-compile src/main.ts -o src_agent.js -w"
+  },
+  "devDependencies": {
+    "@types/frida-gum": "^18.7.0",
+    "@types/node": "^20.12.12",
+    "frida-compile": "^16.4.1"
+  }
+}
