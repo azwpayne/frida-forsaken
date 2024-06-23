@@ -1,13 +1,32 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "module": "es6",
-    "allowJs": true,
-    "noEmit": true,
+    "incremental": true,
+    "target": "es6",
+    "module": "commonjs",
     "strict": true,
+    "sourceMap": true,
     "esModuleInterop": true,
-    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "checkJs": true
-  }
+    "noUnusedLocals": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "outDir": "dist/"
+  },
+  "requireConfigFile": false,
+  "include": [
+    "./src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

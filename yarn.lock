@@ -196,7 +196,7 @@
 
 "@types/frida-gum@^18.7.0":
   version "18.7.0"
-  resolved "https://registry.npmjs.org/@types/frida-gum/-/frida-gum-18.7.0.tgz"
+  resolved "https://registry.yarnpkg.com/@types/frida-gum/-/frida-gum-18.7.0.tgz#4a530c9946a7cb53300d38a3aba878434f3b3e62"
   integrity sha512-HhBomXE23fLDAWXEKi3BjJLrlH9wAv9IEQNfO/PaYHQNNbh0Bi06gx6JbXTspVpbqlbVqkWAuU7n6HaS9B6yXA==
 
 "@types/node@^17.0.36":
@@ -204,10 +204,10 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-17.0.45.tgz"
   integrity sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==
 
-"@types/node@^20.12.12":
-  version "20.12.12"
-  resolved "https://registry.npmjs.org/@types/node/-/node-20.12.12.tgz"
-  integrity sha512-eWLDGF/FOSPtAvEqeRAQ4C8LSA7M1I7i0ky1I8U7kD1J5ITyW3AsRhQrKVoWf5pFKZ2kILsEGJhsI9r93PYnOw==
+"@types/node@^20.14.8":
+  version "20.14.8"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.14.8.tgz#45c26a2a5de26c3534a9504530ddb3b27ce031ac"
+  integrity sha512-DO+2/jZinXfROG7j7WKFn/3C6nFwxy2lLpgLjEXJz+0XKphZlTLJ14mo8Vfg8X5BWN6XjyESXq+LcYdT7tR3bA==
   dependencies:
     undici-types "~5.26.4"
 
@@ -238,7 +238,7 @@ commander@^2.20.0:
 
 frida-compile@^16.4.1:
   version "16.4.1"
-  resolved "https://registry.npmjs.org/frida-compile/-/frida-compile-16.4.1.tgz"
+  resolved "https://registry.yarnpkg.com/frida-compile/-/frida-compile-16.4.1.tgz#5a1d7cf946a28d375aa2c2eb4d507f6c8520e765"
   integrity sha512-xI9HNtUFpHxuKBGXaL6XJAYH1zWTvNJDrHRnz1hp0oS24iPHt6c01Jmm3qljZek3oQWn8HhvfNvrzfgbsKzoBQ==
   dependencies:
     "@frida/assert" "^3.0.1"
@@ -287,7 +287,7 @@ ieee754@^1.2.1:
   resolved "https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz"
   integrity sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==
 
-rxjs@*:
+rxjs@^7.5.2:
   version "7.8.1"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.8.1.tgz#6f6f3d99ea8044291efd92e7c7fcf562c4057543"
   integrity sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==
