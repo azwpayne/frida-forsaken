@@ -39,6 +39,7 @@ type-checking feedback.
 | Author    | repo |    category |
 | -------- | ------- | -------  |
 | oleavr  | [frida-agent-example](https://github.com/oleavr/frida-agent-example)    |comprehensive    |
+| deathmemory  | [FridaContainer](https://github.com/deathmemory/FridaContainer)    |comprehensive    |
 | CreditTone | [hooker](https://github.com/CreditTone/hooker)     |comprehensive    |
 | pcipolloni    | [universal-android-ssl-pinning-bypass-with-frida](https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/)    |capture    |
 | r0ysue    | [r0capture](https://github.com/r0ysue/r0capture)    |capture    |
