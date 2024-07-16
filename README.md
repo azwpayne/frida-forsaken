@@ -16,10 +16,10 @@ yarn install
 
 ```bash
 # spwn
-frida -U -l src_agent.js -f package_name --pause
+frida -Ul src_agent.js -f package_name
 
 # attach
-frida -UF -l src_agent.js --pause
+frida -UFl src_agent.js
 ```
 
 ### Development workflow

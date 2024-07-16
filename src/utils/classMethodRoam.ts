@@ -21,6 +21,13 @@ export function enumerateMethod(clz: Java.Wrapper): string[] {
   return MethodList;
 }
 
+export function enumerateMethodSignature(clz: Java.Wrapper) {
+  const declaredMethods = clz.class.getDeclaredMethods();
+  declaredMethods.forEach((methodName: string) => {
+    Log.i(`enumerateMethodSignature`, `class: ${clz.class.$className} method: ${methodName}`);
+  });
+}
+
 /**
  * methodRoam Process one or more specified methods in a specified way
  * @param method target method name
