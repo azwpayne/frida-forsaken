@@ -7,9 +7,10 @@
 ### compile & load
 
 ```bash
-git clone xxx
+git clone git@github.com:azwpayne/frida-forsaken.git
 cd frida-forsaken
-yarn install
+npm i -g yarn # If you haven't installed yarn, please run it to install
+yarn install  # Install dependencies
 ```
 
 ### Inject
@@ -35,22 +36,13 @@ type-checking feedback.
 
 ## Reference&Thanks
 
-comprehensive
-
-- [frida-agent-example](https://github.com/oleavr/frida-agent-example)
-- [hooker](https://github.com/CreditTone/hooker)
-
-capture
-
-- [universal-android-ssl-pinning-bypass-with-frida](https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/)
-- [r0capture](https://github.com/r0ysue/r0capture)
-- [DroidSSLUnpinning](https://github.com/WooyunDota/DroidSSLUnpinning)
-- [frida-multiple-unpinning](https://codeshare.frida.re/@akabe1/frida-multiple-unpinning/)
-
-bypass_anti
-
-- [fridantiroot](https://codeshare.frida.re/@dzonerzy/fridantiroot/)
-
-art
-
-- [frida_hook_libart](https://github.com/lasting-yang/frida_hook_libart)
+| Author    | repo |    category |
+| -------- | ------- | -------  |
+| oleavr  | [frida-agent-example](https://github.com/oleavr/frida-agent-example)    |comprehensive    |
+| CreditTone | [hooker](https://github.com/CreditTone/hooker)     |comprehensive    |
+| pcipolloni    | [universal-android-ssl-pinning-bypass-with-frida](https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/)    |capture    |
+| r0ysue    | [r0capture](https://github.com/r0ysue/r0capture)    |capture    |
+| WooyunDota    | [DroidSSLUnpinning](https://github.com/WooyunDota/DroidSSLUnpinning)    |capture    |
+| akabe1    | [frida-multiple-unpinning](https://codeshare.frida.re/@akabe1/frida-multiple-unpinning/)    |capture    |
+| dzonerzy    | [fridantiroot](https://codeshare.frida.re/@dzonerzy/fridantiroot/)    |bypass_anti    |
+| lasting-yang    | [frida_hook_libart](https://github.com/lasting-yang/frida_hook_libart)   |hook art    |
