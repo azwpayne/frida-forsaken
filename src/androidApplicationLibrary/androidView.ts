@@ -8,4 +8,3 @@ export function AndroidView(): void {
     methodRoam(androidView[el], ClzHook);
   });
 }
-

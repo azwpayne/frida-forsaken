@@ -1,23 +1,19 @@
 "use strict";
 
-
 import { Log } from "../../utils/logger.js";
 
-export function libart(filterSoName: string = "libsgmainso-6.6.231201.33656539.so") {
-
+export function libart(filterSoName: string) {
   Process
   .getModuleByName("libart.so")
   .enumerateSymbols()
   .forEach(symbol => {
         if (
-            symbol.name.indexOf("_ZN3art3JNIILb0") >= 0
-            && symbol.name.indexOf("JNI") >= 0
-            && symbol.name.indexOf("CheckJNI") < 0
-            && symbol.name.indexOf("art") >= 0
+            symbol.name.includes("_ZN3art3JNIILb0")
+            && symbol.name.includes("JNI")
+            && !symbol.name.includes("CheckJNI")
+            && symbol.name.includes("art")
         ) {
-
           Log.i(`symbolInformation`, JSON.stringify(symbol));
-
           Interceptor.attach(
               symbol.address,
               {
@@ -26,9 +22,8 @@ export function libart(filterSoName: string = "libsgmainso-6.6.231201.33656539.s
                   if (module.name.indexOf(filterSoName) == 0) {
                     const java_class = args[1];
                     const class_name = Java.vm.tryGetEnv().getClassName(java_class);
-
-                    if (class_name.indexOf("java.") == -1
-                        && class_name.indexOf("android.") == -1) {
+                    if (!class_name.includes("java.")
+                        && !class_name.includes("android.")) {
                       Log.i(`JavaCodeInformation`, class_name);
                       Log.i(`DebugSymbolInformation`, DebugSymbol.fromAddress(this.returnAddress));
                     }

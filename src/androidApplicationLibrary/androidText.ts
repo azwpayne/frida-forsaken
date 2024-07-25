@@ -1,6 +1,5 @@
 "use strict";
 
-
 import { ClzHook, enumerateMethod, methodRoam } from "../utils/classMethodRoam.js";
 
 export function androidText(): void {

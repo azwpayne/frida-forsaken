@@ -8,7 +8,6 @@ import { ClzHook, enumerateMethod, methodRoam } from "../utils/classMethodRoam";
  * java.lang.StringBuild
  * java.lang.StringBuffer
  *
- *
  */
 
 /**

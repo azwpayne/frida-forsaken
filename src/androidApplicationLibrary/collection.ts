@@ -12,7 +12,7 @@
  * android: android.util.ArraySet, android.util.ArrayMap
  */
 
-import { ClzHook, enumerateMethod, methodRoam } from "../../utils/classMethodRoam.js";
+import { ClzHook, enumerateMethod, methodRoam } from "../utils/classMethodRoam.js";
 
 // Java Collections Framework.
 export const JCF: string[] = [

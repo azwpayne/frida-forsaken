@@ -1,40 +1,38 @@
 "use strict";
 
-
 export function antiMaps(): void {
   antiMapUtil(Module.getExportByName("libc.so", "strstr"));
   antiMapUtil(Module.getExportByName("libc.so", "strcmp"));
 }
 
 function antiMapUtil(np: NativePointer): void {
-  Interceptor.attach(np,
-      {
-        onEnter(args) {
-          const str = args[1].readCString();
-          if (str) {
-            if (
-                str.toLowerCase().indexOf("reject") !== -1
-                || str.toLowerCase().indexOf("inject") !== -1
-                || str.toLowerCase().indexOf("infect") !== -1
-                || str.toLowerCase().indexOf("frida") !== -1
-                || str.toLowerCase().indexOf("gadget") !== -1
-                || str.toLowerCase().indexOf("xposed") !== -1
-                || str.toLowerCase().indexOf("tmp") !== -1
-                || str.toLowerCase().indexOf("gum-js-loop") !== -1
-                || str.toLowerCase().indexOf("gmain") !== -1
-                || str.toLowerCase().indexOf("gdbus") !== -1
-                || str.toLowerCase().indexOf("linjector") !== -1
-            ) {
-              this.hook = true;
-            }
-          }
-        },
-        onLeave(retval) {
-          if (this.hook) {
-            retval.replace(ptr(0));
-          }
-        },
-      });
+  Interceptor.attach(np, {
+    onEnter(args) {
+      const str = args[1].readCString();
+      if (str) {
+        if (
+            str.toLowerCase().includes("reject")
+            || str.toLowerCase().includes("inject")
+            || str.toLowerCase().includes("infect")
+            || str.toLowerCase().includes("frida")
+            || str.toLowerCase().includes("gadget")
+            || str.toLowerCase().includes("xposed")
+            || str.toLowerCase().includes("tmp")
+            || str.toLowerCase().includes("gum-js-loop")
+            || str.toLowerCase().includes("gmain")
+            || str.toLowerCase().includes("gdbus")
+            || str.toLowerCase().includes("linjector")
+        ) {
+          this.hook = true;
+        }
+      }
+    },
+    onLeave(retval) {
+      if (this.hook) {
+        retval.replace(ptr(0));
+      }
+    },
+  });
 }
 
 export function mapRedirect(): void {
