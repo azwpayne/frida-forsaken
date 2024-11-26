@@ -1,6 +1,3 @@
-
-
-
 ## Android
 
 ### Base64
@@ -17,7 +14,6 @@ class: java.lang.Class method: public static byte[] android.util.Base64.encode(b
 class: java.lang.Class method: public static java.lang.String android.util.Base64.encodeToString(byte[],int)
 class: java.lang.Class method: public static java.lang.String android.util.Base64.encodeToString(byte[],int,int,int)
 ```
-
 
 ## Java
 

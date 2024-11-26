@@ -36,14 +36,14 @@ type-checking feedback.
 
 ## Reference&Thanks
 
-| Author    | repo |    category |
-| -------- | ------- | -------  |
-| oleavr  | [frida-agent-example](https://github.com/oleavr/frida-agent-example)    |comprehensive    |
-| deathmemory  | [FridaContainer](https://github.com/deathmemory/FridaContainer)    |comprehensive    |
-| CreditTone | [hooker](https://github.com/CreditTone/hooker)     |comprehensive    |
-| pcipolloni    | [universal-android-ssl-pinning-bypass-with-frida](https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/)    |capture    |
-| r0ysue    | [r0capture](https://github.com/r0ysue/r0capture)    |capture    |
-| WooyunDota    | [DroidSSLUnpinning](https://github.com/WooyunDota/DroidSSLUnpinning)    |capture    |
-| akabe1    | [frida-multiple-unpinning](https://codeshare.frida.re/@akabe1/frida-multiple-unpinning/)    |capture    |
-| dzonerzy    | [fridantiroot](https://codeshare.frida.re/@dzonerzy/fridantiroot/)    |bypass_anti    |
-| lasting-yang    | [frida_hook_libart](https://github.com/lasting-yang/frida_hook_libart)   |hook art    |
+| Author       | repo                                                                                                                                       | category      |
+|--------------|--------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| oleavr       | [frida-agent-example](https://github.com/oleavr/frida-agent-example)                                                                       | comprehensive |
+| deathmemory  | [FridaContainer](https://github.com/deathmemory/FridaContainer)                                                                            | comprehensive |
+| CreditTone   | [hooker](https://github.com/CreditTone/hooker)                                                                                             | comprehensive |
+| pcipolloni   | [universal-android-ssl-pinning-bypass-with-frida](https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/) | capture       |
+| r0ysue       | [r0capture](https://github.com/r0ysue/r0capture)                                                                                           | capture       |
+| WooyunDota   | [DroidSSLUnpinning](https://github.com/WooyunDota/DroidSSLUnpinning)                                                                       | capture       |
+| akabe1       | [frida-multiple-unpinning](https://codeshare.frida.re/@akabe1/frida-multiple-unpinning/)                                                   | capture       |
+| dzonerzy     | [fridantiroot](https://codeshare.frida.re/@dzonerzy/fridantiroot/)                                                                         | bypass_anti   |
+| lasting-yang | [frida_hook_libart](https://github.com/lasting-yang/frida_hook_libart)                                                                     | hook art      |

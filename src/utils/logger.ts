@@ -6,6 +6,15 @@ export class Log {
    */
 
   /**
+   * level:trace
+   * @param tag
+   * @param str
+   */
+  static t(tag: String, str: any): void {
+    console.trace(`${formatDateWithMilliseconds()} [TRACE] ${tag} ${str}`);
+  }
+
+  /**
    * level:debug
    * @param tag
    * @param str
@@ -19,7 +28,7 @@ export class Log {
    * @param tag
    * @param str
    */
-  static i(tag : string, str: any): void {
+  static i(tag: string, str: any): void {
     console.info(`${formatDateWithMilliseconds()} [INFO] ${tag} ${str}`);
   }
 
