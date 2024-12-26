@@ -9,7 +9,6 @@
     "node": "^16"
   },
   "scripts": {
-    "prepare": "npm run build",
     "clean-log": "find log -type f ! -name .keep -delete",
     "build": "frida-compile src/main.ts -o src_agent.js -c",
     "watch": "frida-compile src/main.ts -o src_agent.js -w"

@@ -1,7 +1,5 @@
 "use strict";
 
-"use strict";
-
 import { Log } from "./logger.js";
 import { StackBackTrace } from "./stackBacktrace.js";
 
@@ -14,10 +12,13 @@ import { StackBackTrace } from "./stackBacktrace.js";
 export function enumerateMethod(clz: Java.Wrapper): string[] {
   const declaredMethods = clz.class.getDeclaredMethods();
   let MethodList: string[] = [];
-  for (let i = 0; i < declaredMethods.length; i++) {
-    const methodName = declaredMethods[i].getName();
-    MethodList.push(methodName);
-  }
+  // for (let i = 0; i < declaredMethods.length; i++) {
+  //   const methodName = declaredMethods[i].getName();
+  //   MethodList.push(methodName);
+  // }
+  declaredMethods.array.forEach(fn_name => {
+    
+  });
   return MethodList;
 }
 
@@ -37,11 +38,9 @@ export function methodRoam(
     method: Java.Wrapper,
     fn: (subMethod: Java.Method) => void,
 ): void {
-  const overloads = method.overloads;
-  for (let i = 0; i < overloads.length; i++) {
-    const subMethod = overloads[i];
+  method.overloads.forEach((subMethod: Java.Method) => {
     fn(subMethod);
-  }
+  });
 }
 
 /**
