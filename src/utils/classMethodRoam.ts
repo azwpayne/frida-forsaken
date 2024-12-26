@@ -12,13 +12,10 @@ import { StackBackTrace } from "./stackBacktrace.js";
 export function enumerateMethod(clz: Java.Wrapper): string[] {
   const declaredMethods = clz.class.getDeclaredMethods();
   let MethodList: string[] = [];
-  // for (let i = 0; i < declaredMethods.length; i++) {
-  //   const methodName = declaredMethods[i].getName();
-  //   MethodList.push(methodName);
-  // }
-  declaredMethods.array.forEach(fn_name => {
-    
-  });
+  for (let i = 0; i < declaredMethods.length; i++) {
+    const methodName = declaredMethods[i].getName();
+    MethodList.push(methodName);
+  }
   return MethodList;
 }
 
