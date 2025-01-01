@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
-import { Log } from "./logger.js";
-import { StackBackTrace } from "./stackBacktrace.js";
+import { Log } from './logger.js';
+import { StackBackTrace } from './stackBacktrace.js';
 
 /**
  * enumerateMethod
@@ -9,14 +9,14 @@ import { StackBackTrace } from "./stackBacktrace.js";
  * @param {Java.Method} clz
  * @return{string[]}
  */
-export function enumerateMethod(clz: Java.Wrapper): string[] {
-  const declaredMethods = clz.class.getDeclaredMethods();
-  let MethodList: string[] = [];
-  for (let i = 0; i < declaredMethods.length; i++) {
-    const methodName = declaredMethods[i].getName();
-    MethodList.push(methodName);
-  }
-  return MethodList;
+const methods: Set<string> = new Set();
+
+export function enumerateMethod(clz: Java.Wrapper): Set<string> {
+  const declaredMethods: Java.Wrapper = clz.class.getDeclaredMethods();
+  declaredMethods.map((m: Java.Wrapper) => {
+    methods.add(m.getName());
+  });
+  return methods;
 }
 
 export function enumerateMethodSignature(clz: Java.Wrapper) {
@@ -32,8 +32,8 @@ export function enumerateMethodSignature(clz: Java.Wrapper) {
  * @param {(subMethod: Java.Method) => void} fn target method process logic
  */
 export function methodRoam(
-    method: Java.Wrapper,
-    fn: (subMethod: Java.Method) => void,
+  method: Java.Wrapper,
+  fn: (subMethod: Java.Method) => void,
 ): void {
   method.overloads.forEach((subMethod: Java.Method) => {
     fn(subMethod);
@@ -48,7 +48,8 @@ export function methodRoam(
 export function ClzHook(subMethod: Java.Method): void {
   subMethod.implementation = function () {
     const result = this[subMethod.methodName].apply(this, arguments);
-    Log.i(`class: ${subMethod.holder.$className}\t\n\t fn-signature:${subMethod}`, `\t\n\t args: ${Array.from(arguments).toString()} \t\n\t result: ${result}, \n${StackBackTrace.androidLog()}`);
+    Log.i(`class: ${subMethod.holder.$className}\t\n\t fn-signature:${subMethod}`, `\t\n\t args: ${Array.from(
+      arguments).toString()} \t\n\t result: ${result}, \n${StackBackTrace.androidLog()}`);
     return result;
   };
 }

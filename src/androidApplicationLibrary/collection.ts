@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * Set: HashSet TreeSet LinkedHashSet
@@ -12,7 +12,7 @@
  * android: android.util.ArraySet, android.util.ArrayMap
  */
 
-import { ClzHook, enumerateMethod, methodRoam } from "../utils/classMethodRoam.js";
+import { ClzHook, enumerateMethod, methodRoam } from '../utils/classMethodRoam.js';
 
 // Java Collections Framework.
 export const JCF: string[] = [
@@ -22,8 +22,8 @@ export const JCF: string[] = [
   // "java.util.ArrayList",
   // "java.util.LinkedList",
   // "java.util.ArrayDeque",
-  "java.util.HashMap",
-  "java.util.LinkedHashMap",
+  'java.util.HashMap',
+  'java.util.LinkedHashMap',
   // "java.util.HashTable",
   // "java.util.TreeMap",
 
