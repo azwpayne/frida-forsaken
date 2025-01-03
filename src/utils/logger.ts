@@ -11,7 +11,7 @@ export class Log {
    * @param str
    */
   static t(tag: String, str: any): void {
-    console.trace(`${formatDateWithMilliseconds()} [TRACE] ${tag} ${str}`);
+    console.trace(`${formatDateWithMilliseconds()} [TRACE] [${tag}] ${str}`);
   }
 
   /**
@@ -20,7 +20,7 @@ export class Log {
    * @param str
    */
   static d(tag: String, str: any): void {
-    console.debug(`${formatDateWithMilliseconds()} [DEBUG] ${tag} ${str}`);
+    console.debug(`${formatDateWithMilliseconds()} [DEBUG] [${tag}] ${str}`);
   }
 
   /**
@@ -29,7 +29,7 @@ export class Log {
    * @param str
    */
   static i(tag: string, str: any): void {
-    console.info(`${formatDateWithMilliseconds()} [INFO] ${tag} ${str}`);
+    console.info(`${formatDateWithMilliseconds()} [INFO] [${tag}] ${str}`);
   }
 
 
@@ -39,7 +39,7 @@ export class Log {
    * @param str
    */
   static w(tag: String, str: any): void {
-    console.warn(`${formatDateWithMilliseconds()} [WARM] ${tag} ${str}`);
+    console.warn(`${formatDateWithMilliseconds()} [WARM] [${tag}] ${str}`);
   }
 
   /**
@@ -48,7 +48,7 @@ export class Log {
    * @param str
    */
   static e(tag: String, str: any): void {
-    console.error(`${formatDateWithMilliseconds()} [ERROR] ${tag} ${str}`);
+    console.error(`${formatDateWithMilliseconds()} [ERROR] [${tag}] ${str}`);
   }
 }
 

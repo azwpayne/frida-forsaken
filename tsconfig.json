@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "incremental": true,
-    "target": "ES2021",
+    "target": "ES6",
     "lib": [
-      "ES2021"
+      "ES6"
     ],
     "module": "Node16",
     "moduleResolution": "Node16",

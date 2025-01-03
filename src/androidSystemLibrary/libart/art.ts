@@ -3,7 +3,7 @@
 import { Log } from "../../utils/logger.js";
 
 
-export function libart(filterSoName: string) {
+export function hook_libart(filterSoName: string) {
   Process.getModuleByName("libart.so").enumerateSymbols().forEach(symbol => {
     if (symbol.name.includes("_ZN3art3JNIILb0")
         && symbol.name.includes("JNI")
