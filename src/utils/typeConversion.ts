@@ -6,11 +6,15 @@
  * @param {[]} utf8Bytes
  * @returns {string}
  */
+// export // byte[]转string
+// 完美解决中文乱码的问题
+// 网上的常规思路是将数组变为16进制字符串，然后再每两位转化成字符，这样会带来中文乱码的问题
+
 export function utf8ByteToUnicodeStr(utf8Bytes: []) {
-  let unicodeStr = '';
-  for (let pos = 0; pos < utf8Bytes.length;) {
-    let flag = utf8Bytes[pos];
-    let unicode = 0;
+  var unicodeStr = '';
+  for (var pos = 0; pos < utf8Bytes.length;) {
+    var flag = utf8Bytes[pos];
+    var unicode = 0;
     if ((flag >>> 7) === 0) {
       unicodeStr += String.fromCharCode(utf8Bytes[pos]);
       pos += 1;
