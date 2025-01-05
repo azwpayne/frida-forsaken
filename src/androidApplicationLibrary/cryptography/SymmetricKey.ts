@@ -1,15 +1,14 @@
-"use strict";
+'use strict';
 
 // Symmetric-key algorithm
 
-import { enumerateMethod, methodRoam } from "../../utils/classMethodRoam.js";
-import { Log } from "../../utils/logger.js";
-import { StackBackTrace } from "../../utils/stackBacktrace.js";
-
+import { enumerateMethod, methodRoam } from '../../utils/classMethodRoam.js';
+import { Log } from '../../utils/logger.js';
+import { StackBackTrace } from '../../utils/stackBacktrace.js';
 
 // DES DES-ede AES PBE RSA
 export function cryptoCipher(): void {
-  const cipher = Java.use("javax.crypto.Cipher");
+  const cipher = Java.use('javax.crypto.Cipher');
   enumerateMethod(cipher).forEach(el => {
     methodRoam(cipher[el], (subMethod: Java.Method) => {
       subMethod.implementation = function () {
@@ -23,7 +22,7 @@ export function cryptoCipher(): void {
 
 // Mac
 export function cryptoMac() {
-  const cryptoMac = Java.use("javax.crypto.Mac");
+  const cryptoMac = Java.use('javax.crypto.Mac');
   enumerateMethod(cryptoMac).forEach(el => {
     methodRoam(cryptoMac[el], (subMethod: Java.Method) => {
       subMethod.implementation = function () {
@@ -37,7 +36,7 @@ export function cryptoMac() {
 
 // MD SHA
 export function securityMessageDigest(): void {
-  const securityMessageDigest = Java.use("java.security.MessageDigest");
+  const securityMessageDigest = Java.use('java.security.MessageDigest');
   enumerateMethod(securityMessageDigest).forEach(el => {
     methodRoam(securityMessageDigest[el], (subMethod: Java.Method) => {
       subMethod.implementation = function () {

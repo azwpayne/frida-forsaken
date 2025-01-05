@@ -1,5 +1,4 @@
-"use strict";
-
+'use strict';
 
 // export function openConnection(): void {
 //   const netURL = Java.use("java.net.URL");
@@ -17,16 +16,16 @@
 //   };
 // }
 
-import { ClzHook, methodRoam } from "../../utils/classMethodRoam";
+import { ClzHook, methodRoam } from '../../utils/classMethodRoam';
 
 export function netURL(): void {
-  const clz = Java.use("java.net.URL");
-  methodRoam(clz["openConnection"], ClzHook);
+  const clz = Java.use('java.net.URL');
+  methodRoam(clz['openConnection'], ClzHook);
 }
 
 export function OkHttpClientBuilder(): void {
-  const Builder = Java.use("okhttp3.OkHttpClient$Builder").$new();
-  methodRoam(Builder["proxy"], ClzHook);
+  const Builder = Java.use('okhttp3.OkHttpClient$Builder').$new();
+  methodRoam(Builder['proxy'], ClzHook);
 }
 
 

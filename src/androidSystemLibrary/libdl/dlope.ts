@@ -1,35 +1,19 @@
-"use strict";
+'use strict';
 
-
-export function hook_all_dlopen(module_filter_name: string = "", fn: Function) {
-  Java.androidVersion > "6.0.0"
-      ? dlopen_hook(module_filter_name, fn)
-      : android_dlopen_ext_hook(module_filter_name, fn);
+/**
+ *
+ * @param module_filter_name
+ * @param fn
+ */
+export function hook_all_dlopen(module_filter_name: string = '', fn: Function) {
+  Java.androidVersion < '8.0.0'
+    ? hook_dlopen(module_filter_name, fn)
+    : hook_android_dlopen_ext(module_filter_name, fn);
 }
 
-export function a(symbol: NativePointerValue, moduleFilterName: string, func: (...args: any[]) => void): void {
-  Interceptor.attach(symbol, {
-    onEnter(args) {
-      const loadPath = args[0].readCString();
-
-      if (loadPath && loadPath.includes(moduleFilterName) && this.path.includes(moduleFilterName)) {
-        this.canhook = true;
-        console.log(`dlopen path: ${this.path}`);
-      }
-
-    },
-    onLeave(retval) {
-      if (this.canhook) {
-        return func();
-      }
-    },
-  });
-}
-
-
-export function dlopen_hook(module_filter_name: string, fn: Function): void {
-  const dlopen = Module.getExportByName(null, "dlopen");
-  console.log("dlopen: ", dlopen);
+export function hook_dlopen(module_filter_name: string, fn: Function): void {
+  const dlopen = Module.getExportByName(null, 'dlopen');
+  console.log('dlopen: ', dlopen);
   Interceptor.attach(dlopen, {
     onEnter: function (args) {
       const path_ptr = args[0];
@@ -37,7 +21,7 @@ export function dlopen_hook(module_filter_name: string, fn: Function): void {
         this.path = path_ptr.readCString();
         if (this.path.indexOf(module_filter_name) >= 0) {
           this.canhook = true;
-          console.log("dlopen path:", this.path);
+          console.log('dlopen path:', this.path);
         }
       }
     },
@@ -51,8 +35,8 @@ export function dlopen_hook(module_filter_name: string, fn: Function): void {
 
 }
 
-export function android_dlopen_ext_hook(module_filter_name: string, fn: Function): void {
-  const android_dlopen_ext = Module.getExportByName(null, "android_dlopen_ext");
+export function hook_android_dlopen_ext(module_filter_name: string, fn: Function): void {
+  const android_dlopen_ext = Module.getExportByName(null, 'android_dlopen_ext');
   console.log(`android_dlopen_ext: ${android_dlopen_ext}`);
 
   Interceptor.attach(android_dlopen_ext, {

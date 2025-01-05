@@ -1,10 +1,11 @@
-"use strict";
+'use strict';
 
-import { Log } from "../../utils/logger.js";
+import { Log } from '../../utils/logger.js';
 
 export function memCmpAddr(): void {
-  const memcmp_addr = Module.getExportByName("libc.so", "fread");
+  const memcmp_addr = Module.getExportByName('libc.so', 'fread');
   Log.d(`bypass anti frida inline hook memCmpAddr`, memcmp_addr);
+
   Interceptor.attach(memcmp_addr, {
     onEnter(args) {
       this.buffer = args[0];   // 保存 buffer 参数

@@ -4,7 +4,7 @@ import { Log } from './utils/logger.js';
 import { find_RegisterNatives } from './androidSystemLibrary/libart/RegisterNatives.js';
 
 setImmediate(function main() {
-  Log.d(``, `Frida Injection successful!!!`);
+  Log.i(`main`, `Frida Injection successful!!!`);
   try {
     JavaHandler();
     KernelHandler();
@@ -38,7 +38,8 @@ function KernelHandler(): void {
 
 // // ### ObjCHandler ###
 function ObjCHandler(): void {
-
+  // throw new Error("Function not implemented.");
+  // todo: from ObjCHandler generate hook code
 }
 
 

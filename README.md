@@ -1,6 +1,6 @@
 # Frida-Forsaken
 
-> Frida-Forsaken is a Frida script collection written in TypeScript, designed to 
+> Frida-Forsaken is a Frida script collection written in TypeScript, designed to
 > modularize commonly used functions in daily work
 
 ## Usage

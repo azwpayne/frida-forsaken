@@ -3,7 +3,6 @@
 import { ClzHook, enumerateMethod, methodRoam } from '../utils/classMethodRoam.js';
 
 /**
- *
  * @constructor
  */
 export function ActivityInfo(): void {
