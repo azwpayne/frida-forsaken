@@ -25,6 +25,7 @@ on:
     paths-ignore:
       - '**/*.md'
       - '**/*.txt'
+      - '**/*.keep'
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -41,9 +42,9 @@ concurrency:
 jobs:
   # Build Job
   build:
-    name: Test it On ${{matrix.os}} and ${{matrix.node-version}}
+    name: Test it On ${{ matrix.os }} and node-${{matrix.node-version}}
     # The type of runner that the job will run on
-    runs-on: ${{matrix.os}}
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       max-parallel: 8
