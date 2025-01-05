@@ -57,11 +57,7 @@ jobs:
           - "22.x"
         os:
           - "ubuntu-latest"
-          - "ubuntu-24.x"
-          - "ubuntu-22.x"
-          - "ubuntu-20.x"
           - "macos-latest"
-          - "macos-14.x"
           - "windows-latest"
 
     # Steps represent a sequence of tasks that will be executed as part of the job
