@@ -1,6 +1,7 @@
 # Frida-Forsaken
 
-> Frida Forsaken is a Frida agent written in TypeScript, designed to modularize commonly used functions in daily work
+> Frida-Forsaken is a Frida script collection written in TypeScript, designed to 
+> modularize commonly used functions in daily work
 
 ## Usage
 
@@ -9,11 +10,12 @@
 ```bash
 git clone git@github.com:azwpayne/frida-forsaken.git
 cd frida-forsaken
-npm i -g yarn # If you haven't installed yarn, please run it to install
-yarn install  # Install dependencies
+npm ci
 ```
 
 ### Inject
+
+> The example frida script code uses USB by default
 
 ```bash
 # spwn
@@ -47,3 +49,4 @@ type-checking feedback.
 | akabe1       | [frida-multiple-unpinning](https://codeshare.frida.re/@akabe1/frida-multiple-unpinning/)                                                   | capture       |
 | dzonerzy     | [fridantiroot](https://codeshare.frida.re/@dzonerzy/fridantiroot/)                                                                         | bypass_anti   |
 | lasting-yang | [frida_hook_libart](https://github.com/lasting-yang/frida_hook_libart)                                                                     | hook art      |
+| saucer-man   | [frida_example](https://github.com/saucer-man/frida_example)                                                                               | frida_example |
