@@ -70,9 +70,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
           registry-url: https://npm.pkg.github.com/
+
       - name: Install dependencies
         run: pnpm install
 
       - name: Check validation
         run: |
-          npm run build
+          pnpm run build
