@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@types/frida-gum": "^18.7.1",
+    "@types/node": "^22.10.5",
     "frida-compile": "^16.4.1"
   }
 }

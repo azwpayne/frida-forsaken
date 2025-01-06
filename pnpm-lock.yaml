@@ -11,6 +11,9 @@ importers:
       '@types/frida-gum':
         specifier: ^18.7.1
         version: 18.7.1
+      '@types/node':
+        specifier: ^22.10.5
+        version: 22.10.5
       frida-compile:
         specifier: ^16.4.1
         version: 16.4.1
@@ -129,6 +132,9 @@ packages:
   '@types/node@17.0.45':
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
 
+  '@types/node@22.10.5':
+    resolution: {integrity: sha512-F8Q+SeGimwOo86fiovQh8qiXfFEh2/ocYv7tU5pJ3EXMSSxk1Joj5wefpFK2fHTf/N6HKGSxIDBT9f3gCxXPkQ==}
+
   acorn@8.14.0:
     resolution: {integrity: sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==}
     engines: {node: '>=0.4.0'}
@@ -175,6 +181,9 @@ packages:
 
   typed-emitter@2.1.0:
     resolution: {integrity: sha512-g/KzbYKbH5C2vPkaXGu8DJlHrGKHLsM25Zg9WuC9pMGfuvT+X25tZQWo5fK1BjBm8+UrVE9LDCvaY0CQk+fXDA==}
+
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
 snapshots:
 
@@ -275,6 +284,10 @@ snapshots:
 
   '@types/node@17.0.45': {}
 
+  '@types/node@22.10.5':
+    dependencies:
+      undici-types: 6.20.0
+
   acorn@8.14.0: {}
 
   base64-js@1.5.1: {}
@@ -342,3 +355,5 @@ snapshots:
   typed-emitter@2.1.0:
     optionalDependencies:
       rxjs: 7.8.1
+
+  undici-types@6.20.0: {}
