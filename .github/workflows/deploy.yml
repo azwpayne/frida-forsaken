@@ -42,7 +42,7 @@ concurrency:
 jobs:
   # Build Job
   build:
-    name: Test it On ${{ matrix.os }} and node-${{matrix.node-version}}
+    name: Test it On ${{ matrix.os }} and node-${{ matrix.node-version }}
     # The type of runner that the job will run on
     runs-on: ${{ matrix.os }}
     strategy:
@@ -52,7 +52,6 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
         # See supported Node.js release schedule at https://nodejs.org/zh-cn/download/releases/
         node-version:
-          - "16.x"
           - "18.x"
           - "20.x"
           - "22.x"
@@ -69,11 +68,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: 'pnpm'
           registry-url: https://npm.pkg.github.com/
-
-      - name: Dependency builds
-        run: npm ci
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Check validation
         run: |
