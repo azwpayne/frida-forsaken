@@ -11,8 +11,18 @@ import { ClzHook, enumerateMethod, methodRoam } from '../utils/classMethodRoam';
  */
 
 /**
+ * @constructor "java.lang.String"
+ */
+export function string() {
+  const java_string = Java.use('java.lang.String');
+  enumerateMethod(java_string).forEach(el => {
+    methodRoam(java_string[el], ClzHook);
+  });
+}
+
+/**
  * In the Android virtual machine, switch the String constructor to StringFactory
- * @constructor
+ * @constructor "java.lang.StringFactory"
  */
 export function StringFactory(): void {
   const stingFactory = Java.use('java.lang.StringFactory');
@@ -21,6 +31,9 @@ export function StringFactory(): void {
   });
 }
 
+/**
+ * @constructor "java.lang.StringBuilder"
+ */
 export function StringBuild() {
   const StringBuilder = Java.use('java.lang.StringBuilder');
   enumerateMethod(StringBuilder).forEach(el => {
@@ -28,6 +41,9 @@ export function StringBuild() {
   });
 }
 
+/**
+ * @constructor "java.lang.StringBuffer"
+ */
 export function StringBuffer() {
   const StringBuffer = Java.use('java.lang.StringBuffer');
   enumerateMethod(StringBuffer).forEach(el => {
