@@ -1,4 +1,4 @@
-import { Log } from '../../../src_agent';
+import { Log } from '../../utils/logger.js';
 
 /**
  * memo_traceback

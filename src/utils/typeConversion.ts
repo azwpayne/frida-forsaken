@@ -42,7 +42,6 @@ export class FridaTypeUtils {
 // export // byte[]转string
 // 完美解决中文乱码的问题
 // 网上的常规思路是将数组变为16进制字符串，然后再每两位转化成字符，这样会带来中文乱码的问题
-
 export function utf8ByteToUnicodeStr(utf8Bytes: []) {
   let unicodeStr = '';
   for (let pos = 0; pos < utf8Bytes.length;) {
@@ -97,4 +96,25 @@ export function utf8ByteToUnicodeStr(utf8Bytes: []) {
     }
   }
   return unicodeStr;
+}
+
+export function buff2hex(buffer: any) { // buffer is an ArrayBuffer
+  // create a byte array (Uint8Array) that we can use to read the array buffer
+  const byteArray = new Uint8Array(buffer);
+
+  // for each element, we want to get its two-digit hexadecimal representation
+  const hexParts = [];
+  for (let i = 0; i < byteArray.length; i++) {
+    // convert value to hexadecimal
+    const hex = byteArray[i].toString(16);
+
+    // pad with zeros to length 2
+    const paddedHex = ('00' + hex).slice(-2);
+
+    // push to array
+    hexParts.push(paddedHex);
+  }
+
+  // join all the hex values of the elements into a single string
+  return hexParts.join('');
 }
