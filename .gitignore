@@ -1176,4 +1176,5 @@ abstract.record*
 ### GPG template
 secring.*
 
-*.js
+
+src_agent.js

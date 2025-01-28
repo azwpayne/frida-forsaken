@@ -2,8 +2,7 @@ import { Log } from '../../utils/logger.js';
 
 /**
  * memo_traceback
- * Backtracking based on memory release to
- * locate key parameters
+ * Backtracking based on memory release to locate key parameters
  * @param target_so_name{string}
  * @param target_str {string}
  */
@@ -16,10 +15,9 @@ export function memo_traceback(target_so_name: string, target_str: string): void
     onEnter(args) {
       const free_str = args[0].readCString();
       if (free_str && free_str.includes(target_str)) {
-        Log.i(`[memo_traceback]`,
-          `free_str: ${free_str}free lr: ${(this.context as Arm64CpuContext).lr.sub(source_so_base_addr)}`);
+        const ctx = this.context as Arm64CpuContext;
+        Log.i(`memo_traceback`, `free_str: ${free_str}free lr: ${ctx.lr.sub(source_so_base_addr)}`);
       }
     },
   });
-
 }
