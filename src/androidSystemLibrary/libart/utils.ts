@@ -13,9 +13,9 @@ import { prettyMethod } from './stdstring';
  * @param symbol
  * @see https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/functions.html#DefineClass
  */
-export function hook_define_class(symbol: NativePointer) {
+export function hook_DefineClass(symbol: NativePointer) {
   if (symbol === null || !symbol) {
-    Log.e(`hook_define_class`, `Unexpected value occurs: ${symbol}`);
+    Log.e(`hook_DefineClass`, `Unexpected value occurs: ${symbol}`);
   }
   Interceptor.attach(symbol, {
     onEnter(args): void {
@@ -75,7 +75,7 @@ export function hook_find_class(symbol: NativePointer): void {
 //// Calling Static Methods
 
 //// String Operations
-export function hook_new_string(symbol: NativePointer): void {
+export function hook_NewString(symbol: NativePointer): void {
   if (symbol === null || !symbol) {
     Log.e(`hook_new_string`, `Unexpected value occurs: ${symbol}`);
   }
@@ -89,7 +89,7 @@ export function hook_new_string(symbol: NativePointer): void {
   });
 }
 
-export function hook_get_string_length(symbol: NativePointer): void {
+export function hook_GetStringLength(symbol: NativePointer): void {
   if (symbol === null || !symbol) {
     Log.e(`hook_get_string_length`, `Unexpected value occurs: ${symbol}`);
   }
@@ -103,22 +103,7 @@ export function hook_get_string_length(symbol: NativePointer): void {
   });
 }
 
-export function hook_release_string_chars(symbol: NativePointer): void {
-  if (symbol === null || !symbol) {
-    Log.e(`hook_release_string_chars`, `Unexpected value occurs: ${symbol}`);
-  }
-  Interceptor.attach(symbol, {
-    onEnter(args): void {
-      const character = args[1].readCString();
-      if (character) {
-        console.log('env->ReleaseStringChars("' + character + '")');
-      }
-    },
-  });
-
-}
-
-export function hook_get_string_chars(symbol: NativePointer): void {
+export function hook_GetStringChars(symbol: NativePointer): void {
   if (symbol === null || !symbol) {
     Log.e(`hook_get_string_chars`, `Unexpected value occurs: ${symbol}`);
   }
@@ -133,7 +118,21 @@ export function hook_get_string_chars(symbol: NativePointer): void {
   });
 }
 
-export function hook_new_string_utf(symbol: NativePointer): void {
+export function hook_ReleaseStringChars(symbol: NativePointer): void {
+  if (symbol === null || !symbol) {
+    Log.e(`hook_release_string_chars`, `Unexpected value occurs: ${symbol}`);
+  }
+  Interceptor.attach(symbol, {
+    onEnter(args): void {
+      const character = args[1].readCString();
+      if (character) {
+        console.log('env->ReleaseStringChars("' + character + '")');
+      }
+    },
+  });
+}
+
+export function hook_NewStringUTF(symbol: NativePointer): void {
   if (symbol === null || !symbol) {
     Log.e(`hook_new_string`, `Unexpected value occurs: ${symbol}`);
   }
@@ -147,7 +146,7 @@ export function hook_new_string_utf(symbol: NativePointer): void {
   });
 }
 
-export function hook_get_string_utf_length(symbol: NativePointer): void {
+export function hook_GetStringUTFLength(symbol: NativePointer): void {
   if (symbol === null || !symbol) {
     Log.e(`hook_new_string`, `Unexpected value occurs: ${symbol}`);
   }
@@ -162,7 +161,7 @@ export function hook_get_string_utf_length(symbol: NativePointer): void {
   });
 }
 
-export function hook_get_string_utf_chars(symbol: NativePointer): void {
+export function hook_GetStringUTFChars(symbol: NativePointer): void {
   if (symbol === null || !symbol) {
     Log.e(`hook_get_string_utf_chars`, `Unexpected value occurs: ${symbol}`);
   }
@@ -177,7 +176,7 @@ export function hook_get_string_utf_chars(symbol: NativePointer): void {
   });
 }
 
-export function hook_release_string_utf_chars(symbol: NativePointer): void {
+export function hook_ReleaseStringUTFChars(symbol: NativePointer): void {
   if (symbol === null || !symbol) {
     Log.e(`hook_release_string_utf_chars`, `Unexpected value occurs: ${symbol}`);
   }
@@ -191,7 +190,7 @@ export function hook_release_string_utf_chars(symbol: NativePointer): void {
   });
 }
 
-export function hook_get_string_region(symbol: NativePointer): void {
+export function hook_GetStringRegion(symbol: NativePointer): void {
   if (symbol === null || !symbol) {
     Log.e(`hook_get_string_region`, `Unexpected value occurs: ${symbol}`);
   }
@@ -205,7 +204,7 @@ export function hook_get_string_region(symbol: NativePointer): void {
   });
 }
 
-export function hook_get_utf_region(symbol: NativePointer): void {
+export function hook_GetUTFRegion(symbol: NativePointer): void {
   if (symbol === null || !symbol) {
     Log.e(`hook_get_utf_region`, `Unexpected value occurs: ${symbol}`);
   }
@@ -219,8 +218,7 @@ export function hook_get_utf_region(symbol: NativePointer): void {
   });
 }
 
-// GetStringUTFRegion
-export function hook_get_string_utf_region(symbol: NativePointer): void {
+export function hook_GetStringUTFRegion(symbol: NativePointer): void {
   if (symbol === null || !symbol) {
     Log.e(`hook_get_string_utf_region`, `Unexpected value occurs: ${symbol}`);
   }
@@ -234,7 +232,7 @@ export function hook_get_string_utf_region(symbol: NativePointer): void {
   });
 }
 
-export function hook_get_string_critical(symbol: NativePointer): void {
+export function hook_GetStringCritical(symbol: NativePointer): void {
   if (symbol === null || !symbol) {
     Log.e(`hook_get_string_critical`, `Unexpected value occurs: ${symbol}`);
   }
@@ -248,7 +246,7 @@ export function hook_get_string_critical(symbol: NativePointer): void {
   });
 }
 
-export function hook_release_string_critical(symbol: NativePointer): void {
+export function hook_ReleaseStringCritical(symbol: NativePointer): void {
   if (symbol === null || !symbol) {
     Log.e(`hook_release_string_critical`, `Unexpected value occurs: ${symbol}`);
   }
@@ -284,7 +282,7 @@ export function hook_release_string_critical(symbol: NativePointer): void {
  * ```
 
  */
-export function hook_register_natives(symbol: NativePointer): void {
+export function hook_RegisterNatives(symbol: NativePointer): void {
   if (symbol === null || !symbol) {
     Log.e(`hook_register_natives`, `Unexpected value occurs: ${symbol}`);
   }
@@ -314,7 +312,7 @@ export function hook_register_natives(symbol: NativePointer): void {
 //// Reflection Support
 // todo impl
 
-export function hook_art_method(symbol: NativePointer) {
+export function hook_ArtMethod(symbol: NativePointer) {
   Interceptor.attach(symbol, {
     onEnter(args) {
       const method_name = prettyMethod(args[0], 0);
