@@ -63,6 +63,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v4
+
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -73,7 +74,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
-          registry-url: https://npm.pkg.github.com/
+          registry-url: https://npm.pkg.github.com
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
