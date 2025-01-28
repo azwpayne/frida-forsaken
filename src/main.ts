@@ -1,7 +1,8 @@
 'use strict';
 
 import { Log } from './utils/logger.js';
-import { find_RegisterNatives } from './androidSystemLibrary/libart/RegisterNatives.js';
+// import { replaceKILL } from './common/bypassAntiFrida/kill.js';
+import { hook_jni } from './androidSystemLibrary/libart/jni_watch.js';
 
 setImmediate(function main() {
   Log.i(`main`, `Frida Injection successful!!!`);
@@ -33,7 +34,11 @@ function Watch() {
 
 // // ### KernelHandler ###
 function KernelHandler(): void {
-  find_RegisterNatives();
+  // find_RegisterNatives();
+  // hook_jni();
+
+  hook_jni();
+  // replaceKILL()
 }
 
 // // ### ObjCHandler ###
