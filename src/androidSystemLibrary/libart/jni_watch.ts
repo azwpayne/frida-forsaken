@@ -3,11 +3,7 @@
 // from https://github.com/Areizen/JNI-Frida-Hook
 
 import { hook_dlopen } from '../libdl/dlope.js';
-import {
-  hook_get_string_region,
-  hook_get_string_utf_region,
-  hook_register_natives,
-} from './utils.js';
+import { hook_GetStringUTFRegion, hook_RegisterNatives } from './utils.js';
 
 /**
  * class created from struct JNINativeInterface:https://android.googlesource.com/platform/libnativehelper/+/master/include_jni/jni.h#129
@@ -297,13 +293,13 @@ function watch_jni(library_name: string, function_name: string) {
           /**
            * Either you hook the one you want by precising what to do with it
            */
-
-          hook_get_string_region(getJNIFunctionAdress(jnienv_addr, 'GetStringRegion'));
-          // hook_get_string_utf_(getJNIFunctionAdress(jnienv_addr, "GetStringRegion"));
-          hook_get_string_utf_region(getJNIFunctionAdress(jnienv_addr, 'GetStringUTFRegion'));
+          // hook_get_string_region,
+          //   hook_get_string_utf_region,
+          //   hook_register_natives,
+          hook_GetStringUTFRegion(getJNIFunctionAdress(jnienv_addr, 'GetStringRegion'));
 
           if (register_flag) {
-            hook_register_natives(getJNIFunctionAdress(jnienv_addr, 'RegisterNatives'));
+            hook_RegisterNatives(getJNIFunctionAdress(jnienv_addr, 'RegisterNatives'));
           }
 
         },
