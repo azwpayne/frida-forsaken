@@ -15,8 +15,8 @@ importers:
         specifier: ^22.12.0
         version: 22.12.0
       frida-compile:
-        specifier: ^16.4.1
-        version: 16.4.1
+        specifier: ^16.4.2
+        version: 16.4.2
 
 packages:
 
@@ -135,8 +135,8 @@ packages:
   '@types/node@22.12.0':
     resolution: {integrity: sha512-Fll2FZ1riMjNmlmJOdAyY5pUbkftXslB5DgEzlIuNaiWhXd00FhWxVC/r4yV/4wBb9JfImTu+jiSvXTkJ7F/gA==}
 
-  acorn@8.14.0:
-    resolution: {integrity: sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==}
+  acorn@8.14.1:
+    resolution: {integrity: sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
@@ -153,21 +153,21 @@ packages:
   commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
 
-  frida-compile@16.4.1:
-    resolution: {integrity: sha512-xI9HNtUFpHxuKBGXaL6XJAYH1zWTvNJDrHRnz1hp0oS24iPHt6c01Jmm3qljZek3oQWn8HhvfNvrzfgbsKzoBQ==}
+  frida-compile@16.4.2:
+    resolution: {integrity: sha512-wNiFk37JVpCoEsuJF9AHZtccM9Z3KGj3yu0Amsb/DKzKnHCxvl8AlAU5qSfYXfAJtzbNuCKGqNBM8u96KvP28A==}
     hasBin: true
 
   frida-fs@5.2.5:
     resolution: {integrity: sha512-Eyb4OqUlcv1/Eq7Q+B9IZmYZIgIM2YjqDojrjmAGzPSSXBuUKwSkuObQcQ8Dup9JTOMIUcSII9/I8DaTe6LFKw==}
 
-  http-parser-js@0.5.8:
-    resolution: {integrity: sha512-SGeBX54F94Wgu5RH3X5jsDtf4eHyRogWX1XGT3b4HuW3tQPM4AaBzoUji/4AAJNXCEOWZ5O0DgZmJw1947gD5Q==}
+  http-parser-js@0.5.9:
+    resolution: {integrity: sha512-n1XsPy3rXVxlqxVioEWdC+0+M+SQw0DpJynwtOPo1X+ZlvdzTLtDBIJJlDQTnwZIFJrZSzSGmIOUdP8tu+SgLw==}
 
   ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
 
-  rxjs@7.8.1:
-    resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
+  rxjs@7.8.2:
+    resolution: {integrity: sha512-dhKf903U/PQZY6boNNtAGdWbG85WAbjT/1xYoZIC7FAY0yWapOBQVsVrDl58W86//e1VpMNBtRV4MaXfdMySFA==}
 
   source-map-support@0.5.21:
     resolution: {integrity: sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==}
@@ -210,7 +210,7 @@ snapshots:
 
   '@frida/http@4.0.2':
     dependencies:
-      http-parser-js: 0.5.8
+      http-parser-js: 0.5.9
 
   '@frida/https@1.0.0': {}
 
@@ -241,7 +241,7 @@ snapshots:
   '@frida/terser@1.0.0':
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.14.0
+      acorn: 8.14.1
       commander: 2.20.3
       source-map-support: 0.5.21
 
@@ -288,7 +288,7 @@ snapshots:
     dependencies:
       undici-types: 6.20.0
 
-  acorn@8.14.0: {}
+  acorn@8.14.1: {}
 
   base64-js@1.5.1: {}
 
@@ -298,7 +298,7 @@ snapshots:
 
   commander@2.20.3: {}
 
-  frida-compile@16.4.1:
+  frida-compile@16.4.2:
     dependencies:
       '@frida/assert': 3.0.2
       '@frida/base64-js': 2.0.3
@@ -333,11 +333,11 @@ snapshots:
 
   frida-fs@5.2.5: {}
 
-  http-parser-js@0.5.8: {}
+  http-parser-js@0.5.9: {}
 
   ieee754@1.2.1: {}
 
-  rxjs@7.8.1:
+  rxjs@7.8.2:
     dependencies:
       tslib: 2.8.1
     optional: true
@@ -354,6 +354,6 @@ snapshots:
 
   typed-emitter@2.1.0:
     optionalDependencies:
-      rxjs: 7.8.1
+      rxjs: 7.8.2
 
   undici-types@6.20.0: {}
