@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@types/frida-gum':
-        specifier: ^18.7.2
-        version: 18.7.2
+        specifier: ^19.0.1
+        version: 19.0.1
       '@types/node':
         specifier: ^22.15.3
         version: 22.15.3
@@ -126,8 +126,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@types/frida-gum@18.7.2':
-    resolution: {integrity: sha512-nOxTk8n45nQlFQhSSXcnePrzjw6k6JMJMESZ8HlHhUiIQqvGI4RYa69FYdUbGoBRnITn8srEq5vn0dkVwO/ezQ==}
+  '@types/frida-gum@19.0.1':
+    resolution: {integrity: sha512-mp8BpWWkQFJH86ZN5uXZuDiA7KY/+jDknrw0a06x0/+F5ucPwctHrCuV6iT+LLCp/GyICc36ssedF33B1WoLsw==}
 
   '@types/node@17.0.45':
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
@@ -280,7 +280,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@types/frida-gum@18.7.2': {}
+  '@types/frida-gum@19.0.1': {}
 
   '@types/node@17.0.45': {}
 

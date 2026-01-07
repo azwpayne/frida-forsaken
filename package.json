@@ -14,7 +14,7 @@
     "watch": "frida-compile src/main.ts -o src_agent.js -w"
   },
   "devDependencies": {
-    "@types/frida-gum": "^18.7.2",
+    "@types/frida-gum": "^19.0.1",
     "@types/node": "^22.15.3",
     "frida-compile": "^16.4.1"
   }
