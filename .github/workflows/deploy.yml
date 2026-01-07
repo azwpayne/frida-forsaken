@@ -70,7 +70,7 @@ jobs:
           version: 9
 
       - name: Use Node.js ${{ matrix.node-version }} environment in ${{ matrix.os }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
